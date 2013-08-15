@@ -25,18 +25,29 @@ node.__text
 ```
 
 
-How to set up
+Installation
 ============================
-Add the source files to your project.
-*[cocoapod coming soon]*
 
-Install the dependency which is a fork of XMLDictionary
+Cocoapods
+----------------------------
+Podfile
+```
+pod 'RestKit', '~> 0.20.3'
+pod 'XMLDictionary', :git => 'https://github.com/DZamataev/XMLDictionary.git', :branch => 'master'
+pod 'RKXMLDictionarySerialization', :git => 'https://github.com/DZamataev/RKXMLDictionarySerialization.git', :branch => 'master'
+```
+
+From source
+----------------------------
+1. Add the source files to your project
+
+2. Install the dependency which is a fork of XMLDictionary
 
 The necessary fork is here https://github.com/DZamataev/XMLDictionary
 
-The original is here https://github.com/nicklockwood/XMLDictionary
+*Pull request sent to [the original XMLDictionary](https://github.com/nicklockwood/XMLDictionary)*
 
-*[pull request sent]*
+=============================
 
 Once installed, register the serialization in your app delegate (or wherever you handle RestKit setup):
 ```
@@ -48,7 +59,7 @@ Once installed, register the serialization in your app delegate (or wherever you
 
 Note that you may register the class for more than one MIME Type or use an NSRegularExpression that matches the MIME Type that you wish to register. For more details, review the [API Documentation](http://restkit.org/api/latest/Classes/RKMIMETypeSerialization.html).
 
-Problem described
+What it does
 ============================
 
 The most useful feature and the reason this solution exists is that RKXMLReaderSerialization (https://github.com/RestKit/RKXMLReaderSerialization)
