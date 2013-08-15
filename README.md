@@ -30,6 +30,14 @@ How to set up
 Add the source files to your project.
 *[cocoapod coming soon]*
 
+Install the dependency which is a fork of XMLDictionary
+
+The necessary fork is here https://github.com/DZamataev/XMLDictionary
+
+The original is here https://github.com/nicklockwood/XMLDictionary
+
+*[pull request sent]*
+
 Once installed, register the serialization in your app delegate (or wherever you handle RestKit setup):
 ```
 #import "RKXMLDictionarySerialization.h"
