@@ -1,6 +1,5 @@
 //
 //  RKXMLDictionarySerialization.m
-//  Sputnik
 //
 //  Created by Denis Zamataev on 8/14/13.
 //
@@ -15,10 +14,11 @@
     static XMLDictionaryParser *shared = nil;
     dispatch_once(&pred, ^{
         shared = [[XMLDictionaryParser alloc] init];
-        shared.collapseTextNodes = false;
-        shared.attributesMode = XMLDictionaryAttributesModeUnprefixed;
+        shared.attributesMode = XMLDictionaryAttributesModePrefixed;
         shared.nodeNameMode = XMLDictionaryNodeNameModeNever;
         shared.includeRootNodeToDictionary = YES;
+        shared.collapseTextNodes = NO;
+		shared.stripEmptyNodes = NO;
     });
     return shared;
 }

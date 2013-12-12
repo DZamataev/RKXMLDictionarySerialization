@@ -1,6 +1,5 @@
 //
 //  RKXMLDictionarySerialization.h
-//  Sputnik
 //
 //  Created by Denis Zamataev on 8/14/13.
 //
