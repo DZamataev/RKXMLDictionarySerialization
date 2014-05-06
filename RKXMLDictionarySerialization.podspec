@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RKXMLDictionarySerialization"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "A RestKit serialization format implementation for XML using XMLDictionary."
   s.homepage     = "https://github.com/DZamataev/RKXMLDictionarySerialization"
   s.license      = { :type => 'MIT', :file => 'LICENSE'}
@@ -15,4 +15,5 @@ Pod::Spec.new do |s|
   s.source_files = '*.{h,m}'
   
   s.dependency 'RestKit'
+  s.dependency 'XMLDictionary', '>= 1.4'
 end

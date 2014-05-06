@@ -18,7 +18,7 @@
  */
 
 
-#import "XMLDictionary.h"
+#import <XMLDictionary.h>
 #import <RestKit/RestKit.h>
 
 @interface RKXMLDictionarySerialization : NSObject <RKSerialization>

@@ -16,7 +16,7 @@
         shared = [[XMLDictionaryParser alloc] init];
         shared.attributesMode = XMLDictionaryAttributesModePrefixed;
         shared.nodeNameMode = XMLDictionaryNodeNameModeNever;
-        shared.includeRootNodeToDictionary = YES;
+        shared.wrapRootNode = YES;
         shared.collapseTextNodes = NO;
 		shared.stripEmptyNodes = NO;
     });
