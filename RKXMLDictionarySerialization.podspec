@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |c|
     c.requires_arc = true
-    d.source_files = 'Core/*'
+    c.source_files = 'Core/*'
     c.dependency 'RestKit'
     c.dependency 'XMLDictionary', '>= 1.4'
   end
