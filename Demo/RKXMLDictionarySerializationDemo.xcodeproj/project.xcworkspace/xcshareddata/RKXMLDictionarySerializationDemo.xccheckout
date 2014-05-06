@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5BC03D4A-79C6-42F1-8B83-4079196F2AD4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RKXMLDictionarySerializationDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9420D070-283A-4C6F-9579-B7F0B5D57207</key>
+		<string>https://github.com/DZamataev/RKXMLDictionarySerialization.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RKXMLDictionarySerializationDemo/RKXMLDictionarySerializationDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9420D070-283A-4C6F-9579-B7F0B5D57207</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/DZamataev/RKXMLDictionarySerialization.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9420D070-283A-4C6F-9579-B7F0B5D57207</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9420D070-283A-4C6F-9579-B7F0B5D57207</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RKXMLDictionarySerialization</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -5,18 +5,29 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/DZamataev/RKXMLDictionarySerialization"
   s.license      = { :type => 'MIT', :file => 'LICENSE'}
   s.author       = { "Denis Zamataev" => "denis.zamataev@gmail.com" }
+  s.source       = {
+    :git => "https://github.com/DZamataev/RKXMLDictionarySerialization.git",
+	:tag => s.version.to_s 
+  }
   
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.7'
   
   s.requires_arc = true
-    
-  s.source       = {
-    :git => "https://github.com/DZamataev/RKXMLDictionarySerialization.git",
-	:tag => s.version.to_s 
-  }
-  s.source_files = '*.{h,m}'
+  s.default_subspec = 'Core'
+
+  s.subspec 'Core' do |c|
+    c.requires_arc = true
+    d.source_files = 'Core/*'
+    c.dependency 'RestKit'
+    c.dependency 'XMLDictionary', '>= 1.4'
+  end
   
-  s.dependency 'RestKit'
-  s.dependency 'XMLDictionary', '>= 1.4'
+  s.subspec 'Demo' do |d|
+    d.requires_arc = true
+    d.source_files = 'Demo/RKXMLDictionarySerializationDemo/Source/*'
+    d.resources = 'Demo/RKXMLDictionarySerializationDemo/Resources/*'
+    d.preserve_paths = "Demo/RKXMLDictionarySerializationDemo.xcodeproj", "Podfile"
+    d.dependency 'RKXMLDictionarySerialization/Core'
+  end
 end
