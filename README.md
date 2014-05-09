@@ -1,16 +1,16 @@
 RKXMLDictionarySerialization
 ============================
 
-another way of 'RestKit' XML serialization using adopted version of 'XMLDictionary' found here:
-https://github.com/DZamataev/XMLDictionary
+another way of 'RestKit' XML serialization using [nicklockwood`s XMLDictionary](https://github.com/nicklockwood/XMLDictionary)
 
 The XMLDictionary allows the user to tweak XML parsing settings on the go. 
 With RKXMLDictionarySerialization use ``` [RKXMLDictionarySerialization sharedParser] ``` to do it.
 
 NOTE the way you describe RestKit mapping is a bit special according to the XML node inner text. 
 The inner text property of XML node is named '__text'.
+Thats made in order to make XML parsing uniquely, so that no "attribute name vs inner node name" collision can happen.
 
-So the mapping for
+The mapping for
 ```
 <root>
   <node>
@@ -32,24 +32,14 @@ Cocoapods
 ----------------------------
 Podfile
 ```
-pod 'RestKit', '~> 0.20.3'
-pod 'XMLDictionary', :git => 'https://github.com/DZamataev/XMLDictionary.git', :branch => 'master'
-pod 'RKXMLDictionarySerialization', :git => 'https://github.com/DZamataev/RKXMLDictionarySerialization.git', :branch => 'master'
+pod 'RKXMLDictionarySerialization'
 ```
 
-From source
-----------------------------
-1. Add the source files to your project
 
-2. Install the dependency which is a fork of XMLDictionary
-
-The necessary fork is here https://github.com/DZamataev/XMLDictionary
-
-*Pull request sent to [the original XMLDictionary](https://github.com/nicklockwood/XMLDictionary)*
-
+Usage
 =============================
 
-Once installed, register the serialization in your app delegate (or wherever you handle RestKit setup):
+Once installed, register the serialization in your model class (or wherever you handle RestKit setup):
 ```
 #import "RKXMLDictionarySerialization.h"
 
@@ -59,7 +49,7 @@ Once installed, register the serialization in your app delegate (or wherever you
 
 Note that you may register the class for more than one MIME Type or use an NSRegularExpression that matches the MIME Type that you wish to register. For more details, review the [API Documentation](http://restkit.org/api/latest/Classes/RKMIMETypeSerialization.html).
 
-What it does
+Main idea
 ============================
 
 The most useful feature and the reason this solution exists is that RKXMLReaderSerialization (https://github.com/RestKit/RKXMLReaderSerialization)
@@ -75,8 +65,9 @@ Such XML
   </node>
 </root>
 ```
-is nearly impossible to map correctly with RKXMLReaderSerialization and RKXMLDictionarySerialization (without tweaking settings) also.
-And after parsing on default settings looks like this:
+is nearly impossible to map correctly with RKXMLReaderSerialization and easily handled with RKXMLDictionarySerialization
+
+And after parsing with XMLReader or without tweaking XMLDictionary settings it just becomes something strange:
 ```
 root =     {
         node =         {
@@ -90,11 +81,7 @@ root =     {
     };
 ```
 
-but with RKXMLDictionarySerialization you are able to tweak XMLDictionary parser settings like this:
-```
-[RKXMLDictionarySerialization sharedParser].attributesMode = XMLDictionaryAttributesModePrefixed;
-```
-and you will get the resulting dictionary like this:
+But with XMLDictionarySerialization you`ve got XMLDictionary configured to prefix attribute names by default and it parses it correctly
 ```
 root =     {
         node =         {
@@ -106,7 +93,7 @@ root =     {
     };
 ```
 
-so the object mapping described via RestKit should pay attention to the attribute names if prefixing is enabled.
+so the object mapping described via RestKit should pay attention to the attribute names because prefixing is enabled by default.
 
 ---------------
 
