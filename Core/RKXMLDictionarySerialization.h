@@ -20,6 +20,7 @@
 
 #import <XMLDictionary.h>
 #import <RestKit/RestKit.h>
+#import "XMLWriter.h"
 
 @interface RKXMLDictionarySerialization : NSObject <RKSerialization>
 

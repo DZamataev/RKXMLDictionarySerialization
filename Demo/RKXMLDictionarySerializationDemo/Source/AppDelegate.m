@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "RKXMLDictionarySerialization.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [RKXMLDictionarySerialization dataFromObject:@{ @"entity" : @{@"whats wrong":@"sdsaf", @"workTime": @{@"time" : @"wrtime"}, @"title" : @"asdfaf"} } error:nil];
+    
     return YES;
 }
 

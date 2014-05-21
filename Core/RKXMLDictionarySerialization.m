@@ -26,12 +26,17 @@
 + (id)objectFromData:(NSData *)data error:(NSError **)error
 {
     id result = [[RKXMLDictionarySerialization sharedParser] dictionaryWithData:data];
+//    NSLog(@"%@",result);
     return result;
 }
 
 + (NSData *)dataFromObject:(id)object error:(NSError **)error
 {
-    return nil;
+    NSString *xmlString = [XMLWriter XMLStringFromDictionary:object withHeader:YES];
+//    NSLog(@"%@", xmlString);
+    NSData *data = [xmlString dataUsingEncoding:NSUTF8StringEncoding];
+    return data;
 }
+
 
 @end

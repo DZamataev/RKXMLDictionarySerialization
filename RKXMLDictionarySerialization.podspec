@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RKXMLDictionarySerialization"
-  s.version      = "1.1.0"
+  s.version      = "1.2.0"
   s.summary      = "A RestKit serialization format implementation for XML using XMLDictionary."
   s.homepage     = "https://github.com/DZamataev/RKXMLDictionarySerialization"
   s.license      = { :type => 'MIT', :file => 'LICENSE'}
@@ -18,8 +18,14 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |c|
     c.requires_arc = true
     c.source_files = 'Core/*'
+	c.dependency 'RKXMLDictionarySerialization/Core-no-arc'
     c.dependency 'RestKit'
     c.dependency 'XMLDictionary', '>= 1.4'
+  end
+  
+  s.subspec 'Core-no-arc' do |cna|
+    cna.requires_arc = false
+    cna.source_files = 'Core-no-arc/*'
   end
   
   s.subspec 'Demo' do |d|
